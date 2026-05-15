@@ -49,7 +49,7 @@ namespace NoteWidgetAddIn.RibbonCommand
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Path:";
+            this.label1.Text = "路径:";
             // 
             // tbSelectedPath
             // 
@@ -82,7 +82,7 @@ namespace NoteWidgetAddIn.RibbonCommand
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 21);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Format:";
+            this.label2.Text = "格式:";
             // 
             // cmbFileFormat
             // 
@@ -105,7 +105,7 @@ namespace NoteWidgetAddIn.RibbonCommand
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(87, 37);
             this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "确定";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -118,7 +118,7 @@ namespace NoteWidgetAddIn.RibbonCommand
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(87, 37);
             this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -143,7 +143,7 @@ namespace NoteWidgetAddIn.RibbonCommand
             this.MinimizeBox = false;
             this.Name = "ExportToPathDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Export Hierarchical Files";
+            this.Text = "导出分层文件";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,11 +15,11 @@ namespace NoteWidgetAddIn.Markdown
         /// <summary>
         /// Follow system theme. Default theme.
         /// </summary>
-        [Description("Use system setting")]
+        [Description("跟随系统设置")]
         System = 0,
-        [Description("Light")]
+        [Description("浅色")]
         Light = 1,
-        [Description("Dark")]
+        [Description("深色")]
         Dark = 2
     }
     /// <summary>

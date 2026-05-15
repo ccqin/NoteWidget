@@ -10,21 +10,21 @@ namespace NoteWidgetAddIn
 {
     public enum ExportFormat
     {
-        [Description("PDF(*.pdf)")]
+        [Description("PDF 文件(*.pdf)")]
         [RestrictedNodeType(NodeType.Notebook, NodeType.Section, NodeType.Page)]
         PDF = PublishFormat.pfPDF,
-        [Description("XPS Document(*.xps)")]
+        [Description("XPS 文档(*.xps)")]
         [RestrictedNodeType(NodeType.Notebook, NodeType.Section, NodeType.Page)]
         XPS = PublishFormat.pfXPS,
-        [Description("Single File Web Page(*.mht)")]
+        [Description("单个文件网页(*.mht)")]
         [RestrictedNodeType(NodeType.Section)]
         MHTML = PublishFormat.pfMHTML,
-        [Description("Microsoft Word XML Document(*.docx)")]
+        [Description("Word 文档(*.docx)")]
         [RestrictedNodeType(NodeType.Section)]
         Word = PublishFormat.pfWord,
-        [Description("Markdown Document(*.md)")]
+        [Description("Markdown 文档(*.md)")]
         Markdown = 100,
-        [Description("Html Document from markdown(*.html)")]
+        [Description("HTML 文档(*.html)")]
         Html = 101
     }
 }

@@ -58,7 +58,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Advanced
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Color Scheme: ";
+            this.label1.Text = "配色方案: ";
             // 
             // cmbColorScheme
             // 
@@ -81,7 +81,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Advanced
             this.cbSameWindowPreview.Name = "cbSameWindowPreview";
             this.cbSameWindowPreview.Size = new System.Drawing.Size(247, 23);
             this.cbSameWindowPreview.TabIndex = 3;
-            this.cbSameWindowPreview.Text = "Always preview in the same window";
+            this.cbSameWindowPreview.Text = "始终在同一窗口中预览";
             this.cbSameWindowPreview.UseVisualStyleBackColor = true;
             // 
             // btnSave
@@ -93,7 +93,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Advanced
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 30);
             this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnCancel
@@ -105,7 +105,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Advanced
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 30);
             this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // cmbHighlightTheme
@@ -132,7 +132,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Advanced
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 19);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Highlight Theme: ";
+            this.label2.Text = "代码高亮主题: ";
             // 
             // tabWidget
             // 
@@ -170,7 +170,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Advanced
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 19);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Refresh Preview: ";
+            this.label3.Text = "刷新预览: ";
             // 
             // label4
             // 
@@ -180,7 +180,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Advanced
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 19);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Every ";
+            this.label4.Text = "每 ";
             // 
             // label5
             // 
@@ -190,7 +190,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Advanced
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 19);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Seconds";
+            this.label5.Text = "秒";
             // 
             // udRefreshInterval
             // 
@@ -234,7 +234,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Advanced
             this.Name = "AdvancedSettingsDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Advanced Widget Setting";
+            this.Text = "高级设置";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabWidget.ResumeLayout(false);
             this.tabPreviewPage.ResumeLayout(false);
