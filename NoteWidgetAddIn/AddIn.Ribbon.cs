@@ -61,7 +61,11 @@ namespace NoteWidgetAddIn
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public async Task PreviewMarkdownCmd(IRibbonControl control) => await _commandFactory.Run<PreviewMarkdownCommand>();        
+        public async Task PreviewMarkdownCmd(IRibbonControl control) => await _commandFactory.Run<PreviewMarkdownCommand>();
+        /// <summary>
+        /// Edit current page's markdown content in editor window.
+        /// </summary>
+        public async Task MarkdownEditorCmd(IRibbonControl control) => await _commandFactory.Run<MarkdownEditorCommand>();
         /// <summary>
         /// Show markdown cheat sheet window
         /// </summary>
