@@ -196,6 +196,10 @@
     <Content Include="Resources\css\prism.css" />
     <Content Include="Resources\js\mermaid.min.js" />
     <Content Include="Resources\js\prism.js" />
+    <Content Include="Resources\js\editor-host.html" />
+    <Content Include="Resources\js\monaco\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\MarkdownCheatSheet.html" />
     <None Include=".editorconfig" />
     <None Include="app.config" />
@@ -213,6 +217,10 @@
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="RibbonCommand\Markdown\WebBrowserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RibbonCommand\Markdown\MarkdownEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
