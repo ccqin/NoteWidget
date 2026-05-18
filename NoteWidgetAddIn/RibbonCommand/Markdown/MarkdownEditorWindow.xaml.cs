@@ -10,7 +10,6 @@ using System.Windows.Input;
 using Microsoft.Web.WebView2.Core;
 using NoteWidgetAddIn.Markdown;
 using NoteWidgetAddIn.Model;
-using NoteWidgetAddIn.Utils;
 using NLog;
 
 namespace NoteWidgetAddIn.RibbonCommand.Markdown
@@ -175,7 +174,7 @@ namespace NoteWidgetAddIn.RibbonCommand.Markdown
             editorWebView.CoreWebView2.WebMessageReceived += EditorWebMessageReceived;
 
             // Navigate to the Monaco editor host page
-            var editorUrl = string.Format("https://{0}/js/editor-host.html",
+            var editorUrl = string.Format("http://{0}/resources/js/editor-host.html",
                 PathHelper.MappedVirtualHostName);
             editorWebView.CoreWebView2.Navigate(editorUrl);
         }

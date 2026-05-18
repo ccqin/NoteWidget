@@ -141,6 +141,10 @@
     <Compile Include="RibbonCommand\Markdown\WebBrowserWindow.xaml.cs">
       <DependentUpon>WebBrowserWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RibbonCommand\Markdown\MarkdownEditorWindow.xaml.cs">
+      <DependentUpon>MarkdownEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RibbonCommand\MarkdownEditorCommand.cs" />
     <Compile Include="RibbonCommand\WpfAddInApplication.cs" />
   </ItemGroup>
   <ItemGroup>
