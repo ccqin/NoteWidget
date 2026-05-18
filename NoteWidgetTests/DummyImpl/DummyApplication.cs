@@ -68,9 +68,16 @@ namespace NoteWidgetAddIn
             throw new NotImplementedException();
         }
 
+        private string _lastUpdatedPageXml;
+
         public void UpdatePageContent(string bstrPageChangesXmlIn, DateTime dateExpectedLastModified, XMLSchema xsSchema = XMLSchema.xs2013, bool force = false)
         {
-            throw new NotImplementedException();
+            _lastUpdatedPageXml = bstrPageChangesXmlIn;
+        }
+
+        public string GetLastUpdatedPageXml()
+        {
+            return _lastUpdatedPageXml;
         }
 
         public void GetBinaryPageContent(string bstrPageID, string bstrCallbackID, out string pbstrBinaryObjectB64Out)

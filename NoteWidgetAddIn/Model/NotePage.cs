@@ -227,6 +227,26 @@ namespace NoteWidgetAddIn.Model
         {
             AddCustomMeta(MarkdownFlag, "true");
         }
+        public void UpdateContent(string markdown)
+        {
+            var outline = Root.Descendants(Namespace + "Outline").FirstOrDefault();
+            if (outline == null) return;
+
+            var oeChildren = outline.Element(Namespace + "OEChildren");
+            if (oeChildren == null) return;
+
+            // Remove existing content
+            oeChildren.Elements().Remove();
+
+            // Split markdown into lines and create OE elements
+            var lines = markdown.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+            foreach (var line in lines)
+            {
+                var oe = new XElement(Namespace + "OE",
+                    new XElement(Namespace + "T", new XCData(line)));
+                oeChildren.Add(oe);
+            }
+        }
         public override string ToString()
         {
             return $"NotePage PageID:{PageID}";
