@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        html, body { margin: 0; padding: 0; overflow: hidden; height: 100vh; }
+        #container { width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="monaco/vs/loader.js"></script>
+    <script>
+        var editor = null;
+        var debounceTimer = null;
+
+        require.config({
+            paths: { 'vs': 'monaco/vs' }
+        });
+
+        require(['vs/editor/editor.main'], function () {
+            editor = monaco.editor.create(document.getElementById('container'), {
+                value: '',
+                language: 'markdown',
+                theme: 'vs',
+                automaticLayout: true,
+                minimap: { enabled: true },
+                wordWrap: 'on',
+                lineNumbers: 'on',
+                autoIndent: 'full',
+                bracketPairColorization: { enabled: true },
+                scrollBeyondLastLine: false,
+                fontSize: 14,
+                renderWhitespace: 'selection',
+                tabSize: 4
+            });
+
+            editor.onDidChangeModelContent(function () {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(function () {
+                    window.chrome.webview.postMessage(
+                        JSON.stringify({ type: 'contentChanged', content: editor.getValue() })
+                    );
+                }, 500);
+            });
+
+            // Notify C# that editor is ready
+            window.chrome.webview.postMessage(JSON.stringify({ type: 'editorReady' }));
+        });
+
+        // C# callable APIs
+        function setContent(content) {
+            if (editor) {
+                editor.setValue(content);
+            }
+        }
+
+        function getContent() {
+            return editor ? editor.getValue() : '';
+        }
+
+        function insertText(prefix, suffix, placeholder) {
+            if (!editor) return;
+            var selection = editor.getSelection();
+            var selectedText = editor.getModel().getValueInRange(selection);
+            var text = selectedText || placeholder;
+            var newText = prefix + text + (suffix || '');
+            editor.executeEdits('toolbar', [{
+                range: selection,
+                text: newText,
+                forceMoveMarkers: true
+            }]);
+            editor.focus();
+        }
+
+        function replaceLine(prefix) {
+            if (!editor) return;
+            var position = editor.getPosition();
+            var model = editor.getModel();
+            var lineContent = model.getLineContent(position.lineNumber);
+            var newContent = prefix + lineContent.replace(/^#+\s*/, '').replace(/^>\s*/, '').replace(/^[-*]\s*/, '').replace(/^\d+\.\s*/, '');
+            editor.executeEdits('toolbar', [{
+                range: new monaco.Range(position.lineNumber, 1, position.lineNumber, lineContent.length + 1),
+                text: newContent,
+                forceMoveMarkers: true
+            }]);
+            editor.focus();
+        }
+
+        function insertAtCursor(text) {
+            if (!editor) return;
+            var position = editor.getPosition();
+            editor.executeEdits('toolbar', [{
+                range: new monaco.Range(position.lineNumber, position.column, position.lineNumber, position.column),
+                text: text,
+                forceMoveMarkers: true
+            }]);
+            editor.focus();
+        }
+
+        function setEditorTheme(theme) {
+            monaco.editor.setTheme(theme);
+        }
+
+        function markClean() {
+            if (editor) {
+                var currentVersion = editor.getModel().getAlternativeVersionId();
+                editor._cleanVersionId = currentVersion;
+            }
+        }
+
+        function isDirty() {
+            if (!editor) return false;
+            return editor.getModel().getAlternativeVersionId() !== editor._cleanVersionId;
+        }
+    </script>
+</body>
+</html>
