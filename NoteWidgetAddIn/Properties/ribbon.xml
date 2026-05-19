@@ -2,7 +2,7 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" loadImage="GetImage">
 	<ribbon>
 		<tabs>
-			<tab idMso="TabHome">
+			<tab id="tabNoteWidgetMarkdown" label="Markdown">
 				<group id="groupNoteWidgetMarkdown" label="Markdown">
 					<button id="viewMarkdownAsHtmlButton" size="large"
 							label="预览"
