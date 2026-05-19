@@ -1,0 +1,66 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Release",
+      "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Current\\Bin\\MSBuild.exe",
+      "args": [
+        "NoteWidget.sln",
+        "-t:Build",
+        "-p:Configuration=Release",
+        "-verbosity:minimal"
+      ],
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Build Debug",
+      "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Current\\Bin\\MSBuild.exe",
+      "args": [
+        "NoteWidget.sln",
+        "-t:Build",
+        "-p:Configuration=Debug",
+        "-verbosity:minimal"
+      ],
+      "type": "shell",
+      "group": "build",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Rebuild Release",
+      "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Current\\Bin\\MSBuild.exe",
+      "args": [
+        "NoteWidget.sln",
+        "-t:Rebuild",
+        "-p:Configuration=Release",
+        "-verbosity:minimal"
+      ],
+      "type": "shell",
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Clean",
+      "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Current\\Bin\\MSBuild.exe",
+      "args": [
+        "NoteWidget.sln",
+        "-t:Clean",
+        "-verbosity:minimal"
+      ],
+      "type": "shell",
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

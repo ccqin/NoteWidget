@@ -61,6 +61,7 @@ copy /Y "%SOURCE_DIR%\runtimes\win-arm64\native\WebView2Loader.dll" "%INSTALL_DI
 :: Resource files (CSS, JS, HTML)
 copy /Y "%~dp0NoteWidgetAddIn\Resources\css\*.*" "%INSTALL_DIR%\Resources\css\" >nul
 copy /Y "%~dp0NoteWidgetAddIn\Resources\js\*.*" "%INSTALL_DIR%\Resources\js\" >nul
+xcopy /E /Y /I "%~dp0NoteWidgetAddIn\Resources\js\monaco" "%INSTALL_DIR%\Resources\js\monaco\" >nul
 copy /Y "%~dp0NoteWidgetAddIn\Resources\MarkdownCheatSheet.html" "%INSTALL_DIR%\Resources\" >nul
 
 :: Icon
