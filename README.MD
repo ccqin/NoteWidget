@@ -98,7 +98,10 @@ OneNote 的 Markdown 增强插件，支持 Markdown 编辑、预览、语法高�
 [更多 Mermaid 图表示例](https://mermaid-js.github.io/mermaid/#/examples)
 
 ### 预览窗口截图
-![](preview_snapshot.png)
+![](页面1.png)
+
+### onenote版本
+![](页面2.png)
 
 ### 速查表截图
 ![](cheatsheet_snapshot.png)
